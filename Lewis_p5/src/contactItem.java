@@ -7,7 +7,7 @@ public class contactItem extends TaskApp{
     private static String lastName;
     private static String eMail;
     private static String numberoPhone;
-    protected static void addContactFunction() {
+    protected static void addContactFunction(int i) {
         //add to file
         System.out.println("First name:");
         Scanner scan1 = new Scanner(System.in);
@@ -23,7 +23,7 @@ public class contactItem extends TaskApp{
         System.out.println("Email address:\n");
         Scanner scan4 = new Scanner(System.in);
         eMail = scan4.nextLine();
-        String completeContact = firstName + "\n" + lastName + "\n" + numberoPhone + "\n" + eMail;
+        String completeContact = i + firstName + "\n" + lastName + "\n" + numberoPhone + "\n" + eMail;
         completeContactList.add(completeContact);
     }
 
@@ -35,6 +35,10 @@ public class contactItem extends TaskApp{
         int indexOfrmItem = rmItem.nextInt();
         completeContactList.remove(indexOfrmItem);
         //print item at index being removed
+    }
+
+    public void addContactCon(String firstName){
+        this.firstName = firstName;
     }
 
 }

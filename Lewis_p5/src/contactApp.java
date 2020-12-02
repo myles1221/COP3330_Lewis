@@ -7,7 +7,6 @@ import java.io.File;
 
 public class contactApp extends contactList {
     static int blue;
-
     public static void main(String[] args) {
         contactApp m= new contactApp();
         int blue = contactOrTask();

@@ -39,7 +39,8 @@ public class contactList extends contactItem{
                     break;
                 case 2: //add item method
                     System.out.println("Adding item...\n\n");
-                    addContactFunction();
+                    for(int i=0; i <= 1000; i++)
+                    addContactFunction(i);
                     contactMenu();
                     break;
                 case 3: //edit item method
@@ -83,21 +84,21 @@ public class contactList extends contactItem{
 
     }
 
-
-
-
     protected static void editFunction() {
-
+        System.out.println(completeContactList);
         System.out.println("Edit which name? Enter number:");
         Scanner index = new Scanner(System.in);
         int theIndex = index.nextInt();
-
+        //edit first name list,
+        // then last name list,
+        // then phone list,
+        // then set them to variable to add to complete contact list
         Scanner newTaskTitle = new Scanner(System.in);
-        String newTitle = newTaskTitle.nextLine();
+        String newFirstName = newTaskTitle.nextLine();
         Scanner nDesc = new Scanner(System.in);
-        String newDesc = nDesc.nextLine();
-        firstNameList.set(theIndex, newTitle);
-        lastnameList.set(theIndex, newDesc);
+        String lastName = nDesc.nextLine();
+        firstNameList.set(theIndex, newFirstName);
+        lastnameList.set(theIndex, lastName);
     }
     private static String editlastNameFunc(int theIndex){
         //print index only before first name
