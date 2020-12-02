@@ -8,11 +8,11 @@ public class contactItemTest {
 //    assertE
 //}
 
-    @Test
-    public void creationFailsWithAllBlankValues() {
-        addContactCon c =  new contactItem()
-        assertEquals
-    }
+//    @Test
+//    public void creationFailsWithAllBlankValues() {
+//        addContactCon c =  new contactItem()
+//        assertEquals
+//    }
     @Test
     public void creationSucceedsWithBlankEmail() {
 
