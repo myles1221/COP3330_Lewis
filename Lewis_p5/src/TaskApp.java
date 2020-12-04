@@ -3,12 +3,6 @@ import java.util.Scanner;
 
 public class TaskApp extends TaskList {
 
-    static int pink;
-
-    public void taskAppMenu(String[] args) {
-
-    }
-
     public static void subMenu() {
         contactApp m = new contactApp();
         System.out.println("\nChoose an option.\n");

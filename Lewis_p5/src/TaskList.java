@@ -79,7 +79,7 @@ public class TaskList extends TaskItem {
             new FileWriter(FileNameIs, true);
             //array list for file names ?
         }catch(Exception j){
-            System.out.println("What should i put here?");
+            System.out.println("Error. File could not be saved.");
         }
     }
 
@@ -112,10 +112,7 @@ public class TaskList extends TaskItem {
         int theIndex = index.nextInt();
         Scanner newTaskTitle = new Scanner(System.in);
         String newTitle = newTaskTitle.nextLine();
-        Scanner nDesc = new Scanner(System.in);
-        String newDesc = nDesc.nextLine();
         varTaskList.set(theIndex, newTitle);
-        taskshortDescriptionList.set(theIndex, newDesc);
     }
 
     static void addTaskFunction() {
@@ -127,8 +124,14 @@ public class TaskList extends TaskItem {
         titleTask = scan1.nextLine();
         System.out.println("Due date:\n");
         String dueDateofTask = inputDate();
-        dueDateTaskList.add(inputDate());
+        String totaltask = titleTask + dueDateofTask;
+        System.out.println("Short Description:\n");
+        Scanner ScannedInput = new Scanner(System.in);
+        String shortDesc = ScannedInput.nextLine();
+        dueDateTaskList.add(dueDateofTask);
         varTaskList.add(titleTask);
+        uncompletedTaskList.add(totaltask);
+        taskshortDescriptionList.add(shortDesc);
 
     }
 
@@ -146,8 +149,10 @@ public class TaskList extends TaskItem {
     public static int unmarkFunction(int indexOfCurrentTask) {
         //show list of unmarked and list of marked
         String completionMark = "$$$$$";
+        completedTaskList.add(uncompletedTaskList.get(indexOfCurrentTask));
         uncompletedTaskList.remove(indexOfCurrentTask);
         System.out.println("Item removed.\ncurrent Task List:" + uncompletedTaskList);
+
         int i, j;
         //for(j = 0; j < getObjectSize.completedTasks; j++)//for loops to print out uncompleted tasks
         //for(i = 0; i < sizeOf.completedTasks; i++) //for loops to print out completed tasks

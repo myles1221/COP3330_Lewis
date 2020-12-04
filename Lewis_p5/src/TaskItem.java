@@ -27,15 +27,21 @@ public abstract class TaskItem{
     }
 
     protected static String inputDate(){
-        System.out.println("Enter year");
+        System.out.println("Enter Year\n");
         Scanner yearDate = new Scanner(System.in);
+        String dateYear = yearDate.nextLine();
+        System.out.println("Enter month\n");
         Scanner monDate = new Scanner(System.in);
+        String dateMon = monDate.nextLine();
+        System.out.println("Enter day");
         Scanner dayDate = new Scanner(System.in);
-        completeDate = "Date entered:" + yearDate + "/" + monDate + "/" + dayDate;
+        String dateday = dayDate.nextLine();
+        completeDate = "\n" + dateYear + "/" + dateMon + "/" + dateday;
         return completeDate;
     }
 
     protected static String inputNumber(){
+        System.out.println("First name");
         Scanner firstThree = new Scanner(System.in);
         Scanner midThree = new Scanner(System.in);
         Scanner lastFour = new Scanner(System.in);

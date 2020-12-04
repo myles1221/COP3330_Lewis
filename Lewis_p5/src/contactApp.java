@@ -15,6 +15,7 @@ public class contactApp extends contactList {
         } else if (blue == 2) {
             //run method for loading list
             System.out.println("Loading List...\n\n");
+            subMenu();
             //[Load List Method]
         } else if (blue == 0) {
             //exit program

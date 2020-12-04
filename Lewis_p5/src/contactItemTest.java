@@ -5,13 +5,13 @@ import static org.junit.jupiter.api.Assertions.*;
 public class contactItemTest {
 //@Test
 //    public void contactCreationTest(){
-//    assertE
+//    assertEq
 //}
 
 //    @Test
 //    public void creationFailsWithAllBlankValues() {
-//        addContactCon c =  new contactItem()
-//        assertEquals
+//         c =  new contactItem()
+//        assertThrows
 //    }
     @Test
     public void creationSucceedsWithBlankEmail() {

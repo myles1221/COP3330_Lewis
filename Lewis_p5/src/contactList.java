@@ -7,7 +7,9 @@ public class contactList extends contactItem{
     private static ArrayList<String> firstNameList = new ArrayList<String>();
     private static ArrayList<String> lastnameList = new ArrayList<String>();
     private static ArrayList<String> phoneNumberList = new ArrayList<String>();
+    private static ArrayList<String> eMailList = new ArrayList<String>();
 
+    protected static Scanner ScanInput = new Scanner(System.in);
 
     public void main() {
         final Formatter x;
@@ -39,8 +41,7 @@ public class contactList extends contactItem{
                     break;
                 case 2: //add item method
                     System.out.println("Adding item...\n\n");
-                    for(int i=0; i <= 1000; i++)
-                    addContactFunction(i);
+                        addContactFunction();
                     contactMenu();
                     break;
                 case 3: //edit item method
@@ -83,72 +84,51 @@ public class contactList extends contactItem{
 
 
     }
-
-    protected static void editFunction() {
+    protected static void rmFunction() {
+        //removing something from the file
+        System.out.println("Select Item to remove: \n");
         System.out.println(completeContactList);
-        System.out.println("Edit which name? Enter number:");
-        Scanner index = new Scanner(System.in);
-        int theIndex = index.nextInt();
-        //edit first name list,
-        // then last name list,
-        // then phone list,
-        // then set them to variable to add to complete contact list
-        Scanner newTaskTitle = new Scanner(System.in);
-        String newFirstName = newTaskTitle.nextLine();
-        Scanner nDesc = new Scanner(System.in);
-        String lastName = nDesc.nextLine();
-        firstNameList.set(theIndex, newFirstName);
-        lastnameList.set(theIndex, lastName);
+        Scanner rmItem = new Scanner(System.in);
+        int indexOfrmItem = rmItem.nextInt();
+        completeContactList.remove(indexOfrmItem);
     }
-    private static String editlastNameFunc(int theIndex){
-        //print index only before first name
-        System.out.println("\nYou entered:\n" + theIndex + "\nnew task title:");
-        System.out.println(firstNameList + "\n" + lastnameList +"\n Which name?");
-        Scanner anotherIndexscan = new Scanner(System.in);
-        int anotherIndex = anotherIndexscan.nextInt();
-        System.out.println("Enter new name:\n");
-        Scanner newStringScan = new Scanner(System.in);
-        String varAnotherIndex = newStringScan.next();
-        lastnameList.set(anotherIndex, varAnotherIndex);
-        return varAnotherIndex;
+    protected static void addContactFunction() {
+        //add to file
+        System.out.println("First name:");
+        Scanner scan1 = new Scanner(System.in);
+        String firstName = ScanInput.nextLine();
+        System.out.println("Last name:\n");
+        Scanner scan2 = new Scanner(System.in);
+        String lastName = scan2.nextLine();
+        System.out.println("Phone Number:\n");
+        Scanner scan3 = new Scanner(System.in);
+        String numberoPhone = scan3.nextLine();
+        inputNumber();
+        System.out.println("Email address:\n");
+        Scanner scan4 = new Scanner(System.in);
+        String eMail = scan4.nextLine();
+        String completeContact = firstName + "\n" + lastName + "\n" + numberoPhone + "\n" + eMail;
+        firstNameList.add(firstName);
+        lastnameList.add(lastName);
+        phoneNumberList.add(numberoPhone);
+        eMailList.add(eMail);
+        completeContactList.add(completeContact);
     }
+        protected static void editFunction(){
 
-    private static String editfirstNameFunc(int theIndex){
-        //print index only before first name
 
-        System.out.println("\nYou entered:\n" + theIndex + "\n");
-        System.out.println(firstNameList +"\n Which name?");
-        Scanner anotherIndexscan = new Scanner(System.in);
-        int anotherIndex = anotherIndexscan.nextInt();
-        System.out.println("Enter new name:\n");
-        Scanner newStringScan = new Scanner(System.in);
-        String varAnotherIndex = newStringScan.next();
-        firstNameList.set(anotherIndex, varAnotherIndex);
-        return varAnotherIndex;
-    }
+            System.out.println(completeContactList);
+            System.out.println("Edit which name? Enter number:");
+            int theIndex = ScanInput.nextInt();
+            String newFirstName = ScanInput.nextLine();
+            String lastName1 = ScanInput.nextLine();
+            String phone = ScanInput.nextLine();
+            String emailadd = ScanInput.nextLine();
+            firstNameList.set(theIndex, newFirstName);
+            lastnameList.set(theIndex, lastName1);
+            phoneNumberList.set(theIndex, phone);
+            eMailList.set(theIndex, emailadd);
+        }
 
-    private static String editPhoneFunc(int theIndex){
-        System.out.println("\nYou entered:\n" + theIndex + "\n");
-        System.out.println(phoneNumberList +"\n Which name?");
-        Scanner anotherIndexscan = new Scanner(System.in);
-        int anotherIndex = anotherIndexscan.nextInt();
-        System.out.println("Enter new number:\n");
-        Scanner newStringScan = new Scanner(System.in);
-        String varAnotherIndex = newStringScan.next();
-        phoneNumberList.set(anotherIndex, varAnotherIndex);
-        return varAnotherIndex;
-    }
-
-    private static void saveContactFunc(){
 
     }
-
-
-
-
-
-    private static String varTaskList(int indexOfComplete) {
-        return varTaskList(indexOfComplete);
-    }
-
-}
