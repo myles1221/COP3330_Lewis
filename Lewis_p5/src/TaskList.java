@@ -153,9 +153,6 @@ public class TaskList extends TaskItem {
         uncompletedTaskList.remove(indexOfCurrentTask);
         System.out.println("Item removed.\ncurrent Task List:" + uncompletedTaskList);
 
-        int i, j;
-        //for(j = 0; j < getObjectSize.completedTasks; j++)//for loops to print out uncompleted tasks
-        //for(i = 0; i < sizeOf.completedTasks; i++) //for loops to print out completed tasks
         return  indexOfCurrentTask;
     }
 

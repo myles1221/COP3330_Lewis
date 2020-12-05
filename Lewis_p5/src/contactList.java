@@ -41,7 +41,7 @@ public class contactList extends contactItem{
                     break;
                 case 2: //add item method
                     System.out.println("Adding item...\n\n");
-                        addContactFunction();
+                    addContactFunction();
                     contactMenu();
                     break;
                 case 3: //edit item method
@@ -65,7 +65,6 @@ public class contactList extends contactItem{
                     contactMenu();
                 case 7: //save current list
                     System.out.println("You chose: save the current list");
-                    //subMenu();
                     contactMenu();
                     break;
                 case 8: //quit to main menu

@@ -1,8 +1,6 @@
-import java.awt.*;
-import java.io.BufferedReader;
-import java.io.FileWriter;
+
 import java.util.*;
-import java.io.File;
+
 
 
 public class contactApp extends contactList {
@@ -37,12 +35,8 @@ public class contactApp extends contactList {
         return blue;
     }
 
-
-
-//    private void loadFile(){
-//        BufferedReader in = new BufferedReader(Reader in, int size);
-//    }
 }
+
 
 
 
